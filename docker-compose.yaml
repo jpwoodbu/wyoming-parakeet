@@ -1,6 +1,6 @@
 services:
   wyoming-parakeet:
-    image: jpwoodbu/wyoming-parakeet:latest
+    image: ghcr.io/jpwoodbu/wyoming-parakeet:latest
     container_name: wyoming-parakeet
     restart: unless-stopped
     ports:
