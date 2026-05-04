@@ -38,7 +38,11 @@ async def start(uri: str, quantization: str | None) -> None:
     try:
         await server_task
     except asyncio.CancelledError:
-        _LOGGER.info("Server stopped")
+        _LOGGER.info("Server stopped gracefully.")
+    except Exception as e:
+        _LOGGER.error(f"Server stopped due to an unexpected error: {e}")
+        server_task.cancel()
+        await asyncio.gather(server_task, return_exceptions=True)
 
 
 def main() -> None:
