@@ -19,7 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "wyoming==1.8.0",
+    "wyoming==1.11.0",
     "onnx-asr[cpu,hub]",
 ]
 
